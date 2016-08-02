@@ -2,7 +2,9 @@
 
 const path = require('path')
 const assert = require('assert')
-const { css, html } = require('../')
+const wesber = require('../')
+const css = wesber.css
+const html = wesber.html
 
 function match(array, name) {
   return array.some((item) => {

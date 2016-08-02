@@ -1,0 +1,39 @@
+@import "path/to/css";
+
+@font-face {
+  font-family: "font name";
+  src: url("font.png");
+}
+
+.icon {
+  background: url(background.png);
+  cursor: url(cursor.png);
+  border: 1px solid transparent;
+  border-image: url( border.png );
+  -moz-border-image: url( moz.png );
+  -webkit-border-image: url( webkit.png );
+  -o-border-image: url( o.png );
+  list-style: lower-roman url('./list.png') outside;
+  list-style-image: url('./list-image.png');
+}
+
+.icon::after {
+  background: url(background.png);
+  content: url('content.png');
+}
+
+.icon-a {
+  background: url(foo.png) no-repeat;
+}
+
+.icon-b {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAACXBIWXMAAACDAAAAgwFi77taAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAAKJQTFRF/////wAA/4AA/04U/0cO/00N/0oL/0YI/0sI/0kP/0cO/0wO/0gN/0sM+0gJ+0sN+0kN+0cN+0oM/EkK/EoM/EgM/EoL/UgL+0kL+0kL+0kL/EkK/EkK/EkM/EkL/EgL/EkL/EkM/EkL/EkL/EkL/EoL/EkK/UkL+0kL/EkK/EkL/EkL/EkL/EkL/EkL/EkL/EkL/EkL/EkL/EkL/EkL/EkLlT4s+QAAADV0Uk5TAAECDRIUGCEiIyQlJyk5Ojs9Pk1WWGF1iImLkpOanaKosbK4vcLE0tjb4OTn6Ovs8Pf4+fzx/G0WAAAAlklEQVQYGU3BWVbCQAAAwWZXEIiiYZEAQUWirCF9/6s5b8wHVVB4pwDO3jkDe8tLrXQP7FxSe3cH5G7ov0Vf5sDKT16trYC53/Rm0ck5MPVA7dcpkFp9RENKU2CiT12DYUsnwEgfyX4O69aDjoCBJkRjHQBtvW7TTifdXrUNNG4GVWVwaxC8ZEejY/bMv2ayKIpF0iT4A6goHK5idqgPAAAAAElFTkSuQmCC);
+}
+
+.icon-c {
+  background: url(http://github.com)
+}
+
+.icon-d {
+  background: url(https://github.com)
+}

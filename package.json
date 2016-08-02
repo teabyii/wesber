@@ -1,0 +1,36 @@
+{
+  "name": "wesber",
+  "version": "0.1.0",
+  "description": "A simple web resource finder and replacer",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "cover": "istanbul cover _mocha -- -u exports -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jsenjoy/wesber.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "resource",
+    "dependency",
+    "parse",
+    "ast"
+  ],
+  "author": "Boom Lee <teabyii@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jsenjoy/wesber/issues"
+  },
+  "homepage": "https://github.com/jsenjoy/wesber#readme",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "css": "^2.2.1"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.4",
+    "mocha": "^3.0.0"
+  }
+}

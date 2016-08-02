@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "cover": "istanbul cover _mocha -- -u exports -R spec"
+    "cover": "istanbul cover _mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
@@ -30,7 +30,9 @@
     "css": "^2.2.1"
   },
   "devDependencies": {
+    "coveralls": "^2.11.12",
     "istanbul": "^0.4.4",
-    "mocha": "^3.0.0"
+    "mocha": "^3.0.0",
+    "mocha-lcov-reporter": "^1.2.0"
   }
 }

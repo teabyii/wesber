@@ -16,7 +16,6 @@ describe('css', () => {
 
   it('basic info', (done) => {
     p.then((result) => {
-      console.log(result)
       assert.equal(result.file, file)
       done()
     }).catch((error) => {

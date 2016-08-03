@@ -1,6 +1,6 @@
 {
   "name": "wesber",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A simple web resource finder and replacer",
   "main": "index.js",
   "scripts": {

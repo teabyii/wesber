@@ -21,8 +21,10 @@ css('style.css').then((result) => {
   // result = { file: ..., source: ..., replacer: ..., dependencies: [ ...] }
 })
 
-html('index.html').then((result) => {
-  ... // result structure is the same
+html('index.html', {
+  resolved: [ 'script' ]
+}).then((result) => {
+  ... // result structure is the same, but just script tag.
 })
 ```
 

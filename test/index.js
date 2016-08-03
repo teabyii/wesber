@@ -150,6 +150,17 @@ describe('css', () => {
       console.log(error)
     })
   })
+
+  it('options #resolved', (done) => {
+    css(file, { resolved: 'cursor' }).then((result) => {
+      const dependencies = result.dependencies
+      assert.equal(dependencies.length, 1)
+      assert.equal(dependencies[0].file, 'cursor.png')
+      done()
+    }).catch((error) => {
+      console.log(error)
+    })
+  })
 })
 
 describe('html', () => {
@@ -283,6 +294,18 @@ describe('html', () => {
           assert.equal(item.hash, mark)
         }
       })
+      done()
+    }).catch((error) => {
+      console.log(error)
+    })
+  })
+
+  it('options #resolved', (done) => {
+    html(file, { resolved: [ 'link', 'iframe' ] }).then((result) => {
+      const dependencies = result.dependencies
+      assert.equal(dependencies.length, 2)
+      assert.equal(dependencies[0].file, 'link.css')
+      assert.equal(dependencies[1].file, 'iframe.htm')
       done()
     }).catch((error) => {
       console.log(error)

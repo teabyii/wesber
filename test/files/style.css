@@ -5,7 +5,12 @@
   src: url("font.png");
 }
 
+@keyframes move_eye {
+  from { margin-left:-20%; } to { margin-left:100%; }
+}
+
 .icon {
+  animation: 4s linear 0s infinite alternate move_eye;
   background: url(background.png);
   cursor: url(cursor.png);
   border: 1px solid transparent;
@@ -35,5 +40,10 @@
 }
 
 .icon-d {
+  background: #fff;
   background: url(https://github.com)
+}
+
+.icon-f {
+  background: url(html.png);
 }

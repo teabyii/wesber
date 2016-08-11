@@ -16,6 +16,15 @@ describe('css', () => {
   const file = path.resolve(__dirname, './files/style.css')
   const p = css(file)
 
+  it('entry not found', (done) => {
+    css(path.resolve(__dirname, './files/test.css'))
+      .catch((error) => {
+        assert(error instanceof Error)
+        assert(error.message.match('no such file or directory'))
+        done()
+      })
+  })
+
   it('basic info', (done) => {
     p.then((result) => {
       assert.equal(result.file, file)
@@ -121,10 +130,21 @@ describe('css', () => {
     })
   })
 
-  it('File not found', (done) => {
+  it('file not found', (done) => {
     p.then((result) => {
       assert(result.dependencies.some((item) => {
         return !item.exists && item.file === 'foo.png'
+      }))
+      done()
+    }).catch((error) => {
+      console.log(error)
+    })
+  })
+
+  it('file exists', (done) => {
+    p.then((result) => {
+      assert(result.dependencies.some((item) => {
+        return item.exists && item.file === 'html.png'
       }))
       done()
     }).catch((error) => {
@@ -166,6 +186,15 @@ describe('css', () => {
 describe('html', () => {
   const file = path.resolve(__dirname, './files/index.html')
   const p = html(file)
+
+  it('entry not found', (done) => {
+    css(path.resolve(__dirname, './files/test.html'))
+      .catch((error) => {
+        assert(error instanceof Error)
+        assert(error.message.match('no such file or directory'))
+        done()
+      })
+  })
 
   it('basic info', (done) => {
     p.then((result) => {
@@ -270,10 +299,21 @@ describe('html', () => {
     })
   })
 
-  it('File not found', (done) => {
+  it('file not found', (done) => {
     p.then((result) => {
       assert(result.dependencies.some((item) => {
         return !item.exists && item.file === 'foo.js'
+      }))
+      done()
+    }).catch((error) => {
+      console.log(error)
+    })
+  })
+
+  it('file exists', (done) => {
+    p.then((result) => {
+      assert(result.dependencies.some((item) => {
+        return item.exists && item.file === 'html.png'
       }))
       done()
     }).catch((error) => {
